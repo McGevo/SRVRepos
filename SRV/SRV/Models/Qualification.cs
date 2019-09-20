@@ -8,5 +8,6 @@ namespace SRV.Models
 {
     class Qualification
     {
+
     }
 }

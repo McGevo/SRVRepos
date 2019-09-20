@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="95a859a9-b803-4f1c-848b-0b4c94a6562e"
-    Publisher="CN=Rybon"
+    Name="539ae01a-9b0c-44b2-aec8-d98b4d7678d2"
+    Publisher="CN=001060482"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="95a859a9-b803-4f1c-848b-0b4c94a6562e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="539ae01a-9b0c-44b2-aec8-d98b4d7678d2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>SRV</DisplayName>
-    <PublisherDisplayName>Rybon</PublisherDisplayName>
+    <PublisherDisplayName>001060482</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
