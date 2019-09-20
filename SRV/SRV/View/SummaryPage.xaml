@@ -9,6 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Image x:Name="redbox" HorizontalAlignment="Left" VerticalAlignment="Top"  Source="..\Assets\Untitled-1.png" Height="126" Width="1500"/>
+        <Image x:Name="image" HorizontalAlignment="Left" VerticalAlignment="Top"  Source="..\Assets\tafesa-banner1.png" Height="126" Width="309" Margin="10,0,0,0"/>
+        <ComboBox x:Name="comboBox"  HorizontalAlignment="Left" Height="58" Margin="920,162,0,0" VerticalAlignment="Top" Width="514"/>
+        <ProgressBar HorizontalAlignment="Left" Height="58" Margin="74,162,0,0" VerticalAlignment="Top" Width="782" Background="Red"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="428" Margin="74,373,0,0" VerticalAlignment="Top" Width="1360"/>
+        <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="log out" Margin="1422,10,10,10" VerticalAlignment="Top" Background="Orange" Padding="10" BorderThickness="2" />
+
+
+
 
     </Grid>
 </Page>
