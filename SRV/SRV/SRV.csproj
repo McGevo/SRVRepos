@@ -140,11 +140,13 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="SRV_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\headerLogo.png" />
     <Content Include="Images\headerBG.png" />
+    <Content Include="Assets\background.png" />
+    <Content Include="Assets\tafesa-banner1.png" />
+    <Content Include="Assets\Untitled-1.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
