@@ -49,9 +49,9 @@
 
         <StackPanel Grid.Column="2"/>
 
-        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Margin="-509,-128,-978,0" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Source="..\Images\headerLogo.png" Margin="0,3,0,0" Grid.Column="1" Grid.ColumnSpan="2" Width="305"/>
-        <AppBarButton Grid.Column="1" HorizontalAlignment="Left" Background="Orange" Icon="Accept" Label="Back" Margin="1532,30,0,0" VerticalAlignment="Top" Width="88"/>
+        <AppBarButton Grid.Column="1" HorizontalAlignment="Left" Background="Orange" Icon="Accept" Label="Back" VerticalAlignment="Top" Width="88" Click="AppBarButton_Click"/>
 
 
     </Grid>
