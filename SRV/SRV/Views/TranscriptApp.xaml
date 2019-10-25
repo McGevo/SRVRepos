@@ -54,9 +54,10 @@
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Source="..\Images\headerLogo.png" Margin="0,3,0,0" Grid.Column="1" Grid.ColumnSpan="2" Width="305"/>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
-            <AppBarButton Foreground="White" Icon="Back"  Label="Back" Width="88" />
-            <AppBarButton Foreground="White" Icon="Accept"  Label="Back" Width="88" />
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+            <AppBarButton Foreground="White" Icon="Back"  Label="Back" Width="88" Click="AppBarButton_Click" />
+            <AppBarButton Foreground="White" Icon="Accept"  Label="Logout" Width="88" />
+            
         </StackPanel>
         
         
