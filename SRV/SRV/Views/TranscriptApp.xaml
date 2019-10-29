@@ -56,7 +56,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
             <AppBarButton Foreground="White" Icon="ShowResults"  Label="Summary" Width="88" Click="AppBarButton_Click" />
-            <AppBarButton Foreground="White" Icon="Accept"  Label="Logout" Width="88" />
+            <AppBarButton Name="logoutButton" Foreground="White" Icon="Accept"  Label="Logout" Width="88" Click="LogoutButton_Click" />
             
         </StackPanel>
         

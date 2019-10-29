@@ -23,17 +23,17 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        
-            <StackPanel Orientation="Horizontal" Grid.Column="1"  Grid.Row="2" Padding="20" MaxHeight="1080" HorizontalAlignment="Center" >
-                <ProgressBar HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="680" Background="White" Foreground="Red" Value="50" BorderThickness="2" BorderBrush="Black" Margin="0,0,20,0"/>
-                <ComboBox x:Name="comboBox"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="500"/>
-            </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1"  Grid.Row="2" Padding="20" MaxHeight="1080" HorizontalAlignment="Center" >
+            <ProgressBar HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="680" Background="White" Foreground="Red" Value="50" BorderThickness="2" BorderBrush="Black" Margin="0,0,20,0"/>
+            <ComboBox x:Name="comboBox"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="500"/>
+        </StackPanel>
 
         <ScrollViewer Grid.Column="1" Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.HorizontalScrollMode="Disabled" ScrollViewer.ZoomMode="Disabled">
 
-            <StackPanel Background="LightGray" Padding="20"  MaxHeight="1080" HorizontalAlignment="Center" MaxWidth="1200" >   
+            <StackPanel Background="LightGray" Padding="20"  MaxHeight="1080" HorizontalAlignment="Center" MaxWidth="1200" >
                 <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="688" Width="auto" MaxWidth="3000"/>
-                
+
             </StackPanel>
         </ScrollViewer>
 
@@ -41,11 +41,10 @@
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Source="..\Images\headerLogo.png" Margin="100,3,0,0" Grid.Column="1" Grid.ColumnSpan="2" Width="305"/>
 
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
-            <AppBarButton x:Name="tranAppButton" HorizontalAlignment="Left" Icon="ShowResults"  Label="Apply for Transcript" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="TranAppButton_Click" />
-            <AppBarButton x:Name="logoutButton" HorizontalAlignment="Left" Icon="Accept" Label="Log Out" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" />
-        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
         <StackPanel Grid.Row="4" />
+        <AppBarButton x:Name="tranAppButton" HorizontalAlignment="Left" Icon="ShowResults"  Label="Apply for Transcript" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="TranAppButton_Click" Width="68" Grid.Column="1" Margin="1158,45,0,0" />
+        <AppBarButton x:Name="logoutButton" HorizontalAlignment="Left" Icon="Accept" Label="Log Out" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="LogoutButton_Click" Width="68" Grid.Column="1" Margin="1226,45,0,0" />
 
     </Grid>
 </Page>

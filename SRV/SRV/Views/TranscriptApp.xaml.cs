@@ -31,5 +31,10 @@ namespace SRV.Views
         {
             Frame.Navigate(typeof(SummaryPage));
         }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(LoginPage));
+        }
     }
 }
