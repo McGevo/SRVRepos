@@ -32,7 +32,7 @@
         <ScrollViewer Grid.Column="1" Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.HorizontalScrollMode="Disabled" ScrollViewer.ZoomMode="Disabled">
 
             <StackPanel Background="LightGray" Padding="20"  MaxHeight="1080" HorizontalAlignment="Center" MaxWidth="1200" >   
-                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="549" Width="auto" MaxWidth="3000"/>
+                <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="688" Width="auto" MaxWidth="3000"/>
                 
             </StackPanel>
         </ScrollViewer>
