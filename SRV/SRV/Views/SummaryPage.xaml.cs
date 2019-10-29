@@ -27,6 +27,9 @@ namespace SRV.Views
             this.InitializeComponent();
         }
 
-
+        private void TranAppButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TranscriptApp));
+        }
     }
 }

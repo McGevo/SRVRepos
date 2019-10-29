@@ -41,8 +41,9 @@
         <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Source="..\Images\headerLogo.png" Margin="100,3,0,0" Grid.Column="1" Grid.ColumnSpan="2" Width="305"/>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
-            <AppBarButton x:Name="appBarButton" HorizontalAlignment="Left" Icon="Accept" Label="log out" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" />
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+            <AppBarButton x:Name="tranAppButton" HorizontalAlignment="Left" Icon="ShowResults"  Label="Apply for Transcript" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="TranAppButton_Click" />
+            <AppBarButton x:Name="logoutButton" HorizontalAlignment="Left" Icon="Accept" Label="Log Out" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" />
         </StackPanel>
         <StackPanel Grid.Row="4" />
 
