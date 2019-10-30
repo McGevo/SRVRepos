@@ -12,7 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
+using Windows.UI.Popups;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace SRV.View
@@ -22,14 +22,30 @@ namespace SRV.View
     /// </summary>
     public sealed partial class LoginPage : Page
     {
+        string password = "Pass";
+        string Username = "user";
         public LoginPage()
         {
             this.InitializeComponent();
         }
 
-        private void TextBox_TextChanged(System.Object sender, TextChangedEventArgs e)
+        private async void Login_Click(object sender, RoutedEventArgs e)
         {
-
+            if (loginInput.Text == "" || LoginPassword.Text == "")
+            {
+                MessageDialog message = new MessageDialog(" please input username and password");
+                await message.ShowAsync();
+            }
+            else if (loginInput.Text == Username && LoginPassword.Text == password)
+            {
+                Frame.Navigate(typeof(SummaryPage));
+            }
+            else
+            {
+                MessageDialog message = new MessageDialog(" please input correct username and password");
+                await message.ShowAsync();
+            }
         }
     }
 }
+

@@ -27,6 +27,9 @@ namespace SRV.View
             this.InitializeComponent();
         }
 
+        private void ComboBox_SelectionChanged()
+        {
 
+        }
     }
 }

@@ -14,9 +14,9 @@
         <Image x:Name="image" HorizontalAlignment="Left" VerticalAlignment="Top"  Source="..\Assets\tafesa-banner1.png" Height="126" Width="309" Margin="10,0,0,0"/>
         <StackPanel HorizontalAlignment="Left" Height="874" Margin="0,126,0,0" VerticalAlignment="Top" Width="1500">
             <TextBlock x:Name="Login" HorizontalAlignment="center" Height="80" Margin="50" FontSize="55"  Text="Login" Width="482" TextAlignment="center" Padding="5" FontFamily="Rockwell"  />
-            <TextBox x:Name="loginImput" HorizontalAlignment="center" Height="80" Margin="20" FontSize="40"  PlaceholderText=" Email or UserName"  Width="482" TextAlignment="Center" Padding="5" />
+            <TextBox x:Name="loginInput" HorizontalAlignment="center" Height="80" Margin="20" FontSize="40"  PlaceholderText=" Email or UserName"  Width="482" TextAlignment="Center" Padding="5" />
             <TextBox x:Name="LoginPassword" HorizontalAlignment="center" Height="85" Margin="509,20" FontSize="40"  PlaceholderText=" Password"  Width="482" TextAlignment="Center" Padding="5" />
-            <Button x:Name="login" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="85"  FontSize="25" Margin="50" Background="GhostWhite" Opacity=".8"/>
+            <Button x:Name="login" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="85"  FontSize="25" Margin="50" Background="GhostWhite" Opacity=".8" Click="Login_Click"/>
 
         </StackPanel>
     </Grid>
