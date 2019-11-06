@@ -9,14 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Image x:Name="backround" Source="..\Assets\background.png" Height="990" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Stretch="Fill" />
-        <Image x:Name="redbox" HorizontalAlignment="Left" VerticalAlignment="Top"  Source="..\Assets\Untitled-1.png" Height="126"/>
-        <Image x:Name="image" HorizontalAlignment="Left" VerticalAlignment="Top"  Source="..\Assets\tafesa-banner1.png" Height="126" Width="309" Margin="10,0,0,0"/>
-        <StackPanel HorizontalAlignment="Left" Height="874" Margin="0,126,0,0" VerticalAlignment="Top" Width="1500">
-            <TextBlock x:Name="Login" HorizontalAlignment="center" Height="80" Margin="50" FontSize="55"  Text="Login" Width="482" TextAlignment="center" Padding="5" FontFamily="Rockwell"  />
-            <TextBox x:Name="loginImput" HorizontalAlignment="center" Margin="20" FontSize="40"  PlaceholderText=" Email or UserName"  Width="482" TextAlignment="Center" Padding="5" />
-            <TextBox x:Name="LoginPassword" HorizontalAlignment="center" Margin="509,20" FontSize="40"  PlaceholderText=" Password"  Width="482" TextAlignment="Center" Padding="5" />
-            <Button x:Name="login" Content="Login" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="50"  FontSize="25" Margin="50" Background="GhostWhite" Opacity=".8" Click="Login_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Image x:Name="backround" Source="..\Assets\background.png" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" Stretch="UniformToFill"  />
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Source="..\Images\headerLogo.png" Grid.Column="1" Grid.ColumnSpan="2" Width="305"/>
+        
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <TextBlock x:Name="Login" Height="80" FontSize="40" Text="Login" TextAlignment="center" Padding="5" FontFamily="Rockwell"  />
+            <TextBox x:Name="loginInput" Margin="20" FontSize="25" PlaceholderText="Email or Username"  Width="482" TextAlignment="Center" Padding="5" />
+            <TextBox x:Name="LoginPassword" Margin="20" FontSize="25" PlaceholderText="Password" Width="482" TextAlignment="Center" Padding="5" />
+            <Button x:Name="login" HorizontalAlignment="Center" Content="Login" Width="150" Height="50"  FontSize="25" Margin="50" Background="GhostWhite" Opacity=".8" Click="Login_Click"/>
 
         </StackPanel>
     </Grid>
