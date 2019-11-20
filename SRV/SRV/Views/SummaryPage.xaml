@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SRV.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:data="using:SRV.Models"
+    xmlns:data="using:SRV.Models.Unit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -42,29 +42,27 @@
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
             <AppBarButton x:Name="tranAppButton" HorizontalAlignment="Left" Icon="ShowResults"  Label="Apply for Transcript" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="TranAppButton_Click" Width="68" Grid.Column="1" />
             <AppBarButton x:Name="logoutButton" HorizontalAlignment="Left" Icon="Accept" Label="Log Out" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="LogoutButton_Click" Width="68" Grid.Column="1"  />
+            <AppBarButton x:Name="randomButton" HorizontalAlignment="Left" Icon="Accept" Label="Test Data" VerticalAlignment="Top" Foreground="White" Padding="10" BorderThickness="2" Click="RandomButton_Click" Width="68" Grid.Column="1"  />
         </StackPanel>
         <StackPanel Grid.Row="4" />
 
         <StackPanel Grid.Row="3" Grid.Column="1">
-            <controls:DataGrid x:Name="SummaryGrid"
-                    
+            <controls:DataGrid x:Name="SummaryGrid"  
+                      ItemsSource="{x:Bind data.Unit}"
                       AutoGenerateColumns="False">
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn Header="Course Name"
-                                                 Binding="{Binding CompetencyName}"
-                                                 Width="SizeToCells"
+                                                 Binding="{Binding SubjectDesc}"                                                 
+                                                 Width="200"
                                                  />
                     <controls:DataGridTextColumn Header="National Code"
-                                                 Binding="{Binding NationalCompCode}"
-                                                 Width="SizeToCells"
+                                                 Binding="{Binding SubjectCode}"
+                                                 Width="200"
                                                  />
                     <controls:DataGridTextColumn Header="Grade"
                                                  Binding="{Binding Grade}"
-                                                 Width="SizeToCells"
+                                                 Width="200"
                                                  />
-
-
-
                 </controls:DataGrid.Columns>
             </controls:DataGrid>
         </StackPanel>

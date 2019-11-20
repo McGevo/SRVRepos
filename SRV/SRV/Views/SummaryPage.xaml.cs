@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SRV.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
+using Microsoft.Toolkit.Uwp.UI.Controls;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -31,22 +34,9 @@ namespace SRV.Views
         {
             this.InitializeComponent();
 
-            string connString = "server=studentserver.com.au;user id=admin_srv-sdm;password=Passw0rd!@#;database=admin_it_studies_dev";
-            MySqlConnection mySqlConn = new MySqlConnection(connString);
-            try
-            {
-                mySqlConn.Open();
-
-                string query = "SELECT * FROM competency";
-
-                
-                
-            }
-            catch
-            {
-
-            }
-
+            Unit newUnit = new Unit();
+            List<Unit> unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
+            SummaryGrid.DataContext = unitList;
         }
 
         private void TranAppButton_Click(object sender, RoutedEventArgs e)
@@ -63,6 +53,27 @@ namespace SRV.Views
         public void BindGrid()
         {
             
+        }
+
+        private async void RandomButton_Click(object sender, RoutedEventArgs e)
+        {
+            Unit unit = new Unit();
+
+            List<Unit> units = unit.SelectUnits("sally.smith@student.tafesa.edu.au");
+
+            string unitThing = units[0].ToString();
+
+            int i = 0;
+            while (i < 12)
+            {
+                unitThing += units[i].ToString();
+                i++;
+            }
+
+
+
+            MessageDialog message = new MessageDialog(unitThing);
+            await message.ShowAsync();
         }
     }
 }
