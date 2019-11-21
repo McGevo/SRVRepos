@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace SRV.View
+namespace SRV.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -30,6 +30,11 @@ namespace SRV.View
         private void TextBox_TextChanged(System.Object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SummaryPage));
         }
     }
 }

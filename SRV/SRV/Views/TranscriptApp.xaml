@@ -17,17 +17,18 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="130"/>
+            <RowDefinition Height="20" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Column="0"/>
 
-        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.HorizontalScrollMode="Disabled" ScrollViewer.ZoomMode="Disabled">
+        <ScrollViewer Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.HorizontalScrollMode="Disabled" ScrollViewer.ZoomMode="Disabled">
             <StackPanel Grid.Column="1" Background="LightGray" Grid.Row="1" Padding="40" MaxHeight="1080" >
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" FontSize="24" MinWidth="120"/>
                 <TextBox x:Name="fNameTBox" TextWrapping="Wrap" VerticalAlignment="Top"  MinWidth="250" IsReadOnly="True" FontSize="24" HorizontalAlignment="Stretch" IsEnabled="False" />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" FontSize="24" Width="102" />
-                <TextBox x:Name="sNameTBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="250" IsReadOnly="True" FontSize="24" />
+                <TextBox x:Name="sNameTBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="250" IsReadOnly="True" FontSize="24" IsEnabled="False" />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Date of Birth" VerticalAlignment="Top" FontSize="24" Width="177" />
                 <DatePicker x:Name="dobDP" HorizontalAlignment="Left" VerticalAlignment="Top" MaxWidth="453" FontSize="24" Background="White"  />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontSize="24" Width="136" />
@@ -47,11 +48,19 @@
 
         </ScrollViewer>
 
+
         <StackPanel Grid.Column="2"/>
 
-        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Margin="-509,-128,-978,0" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="..\Images\headerBG.png" MinHeight="72" Grid.ColumnSpan="4" RenderTransformOrigin="0.5,0.5" Width="2767" Height="232" />
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Source="..\Images\headerLogo.png" Margin="0,3,0,0" Grid.Column="1" Grid.ColumnSpan="2" Width="305"/>
-        <AppBarButton Grid.Column="1" HorizontalAlignment="Left" Background="Orange" Icon="Accept" Label="Back" Margin="1532,30,0,0" VerticalAlignment="Top" Width="88"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" >
+            <AppBarButton Foreground="White" Icon="ShowResults"  Label="Summary" Width="88" Click="AppBarButton_Click" />
+            <AppBarButton Name="logoutButton" Foreground="White" Icon="Accept"  Label="Logout" Width="88" Click="LogoutButton_Click" />
+            
+        </StackPanel>
+        
+        
 
 
     </Grid>

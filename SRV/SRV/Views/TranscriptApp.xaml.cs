@@ -26,5 +26,15 @@ namespace SRV.Views
         {
             this.InitializeComponent();
         }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SummaryPage));
+        }
+
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(LoginPage));
+        }
     }
 }
