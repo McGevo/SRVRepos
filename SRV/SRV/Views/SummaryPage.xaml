@@ -48,7 +48,6 @@
 
         <StackPanel Grid.Row="3" Grid.Column="1">
             <controls:DataGrid x:Name="SummaryGrid"  
-                      ItemsSource="{x:Bind data.Unit}"
                       AutoGenerateColumns="False">
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn Header="Course Name"

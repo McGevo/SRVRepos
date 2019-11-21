@@ -36,7 +36,7 @@ namespace SRV.Views
 
             Unit newUnit = new Unit();
             List<Unit> unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
-            SummaryGrid.DataContext = unitList;
+            SummaryGrid.ItemsSource = unitList;
         }
 
         private void TranAppButton_Click(object sender, RoutedEventArgs e)
