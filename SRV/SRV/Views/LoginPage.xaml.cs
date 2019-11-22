@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using SRV.Models;
+using Windows.UI.Popups;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -32,9 +35,19 @@ namespace SRV.Views
 
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private async void Login_Click(object sender, RoutedEventArgs e)
         {
+            Student log = new Student(loginInput.Text);
+            if (log.FirstName != null)
+            {
             Frame.Navigate(typeof(SummaryPage));
+            }
+            else
+            {
+                MessageDialog m = new MessageDialog(log.FirstName);
+                await m.ShowAsync();
+            }
+
         }
     }
 }
