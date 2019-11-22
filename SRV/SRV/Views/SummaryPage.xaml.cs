@@ -35,16 +35,25 @@ namespace SRV.Views
             this.InitializeComponent();
 
             Unit newUnit = new Unit();
-           // Unit unit1 = new Unit();
-           // Unit unit2 = new Unit();
-           // List<Unit> unitList2 = new List<Unit>();
-            //unitList2.Add(unit1);
-
-            //unitList2.Add(unit2);
+            double progressTracker = 0;
 
             unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
-            //SummaryGrid.ItemsSource = unitList2;
-            //SummaryGrid.Columns
+
+            for (int i = 0; i < unitList.Count; i++)
+            {
+                if (unitList[i].Grade == "PA" || unitList[i].Grade == "P" || unitList[i].Grade == "C" || unitList[i].Grade == "D" || unitList[i].Grade == "HD")
+                {
+                    progressTracker++;
+                }
+            }
+            double count = unitList.Count;
+            double result = progressTracker / count;
+            result = result * 100;
+
+            if (progressTracker != 0)
+                passBar.Value = result;
+            else
+                passBar.Value = 0;
             
         }
 
@@ -68,7 +77,7 @@ namespace SRV.Views
         {
             Unit unit = new Unit();
 
-            List<Unit> units = unit.SelectUnits("sally.smith@student.tafesa.edu.au");
+            List<Unit> units = unit.SelectUnits("m_perez@hotmail.com");
 
             string unitThing = units[0].ToString();
 

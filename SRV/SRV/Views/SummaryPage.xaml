@@ -30,7 +30,7 @@
 
 
         <StackPanel Orientation="Horizontal" Grid.Column="1"  Grid.Row="2" Padding="20" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <ProgressBar Height="40" Value="50" BorderThickness="2" BorderBrush="Black" RequestedTheme="Light" Background="#33000000" Foreground="Red" Width="550" Margin="0,0,30,0"/>
+            <ProgressBar Name="passBar" Height="40" Value="80" BorderThickness="2" BorderBrush="Black" RequestedTheme="Light" Background="#33000000" Foreground="Red" Width="550" Margin="0,0,30,0"/>
             <ComboBox x:Name="comboBox" Width="500" Margin="30,0,0,0" />
         </StackPanel>
 
@@ -48,11 +48,16 @@
         <StackPanel Grid.Row="3" Grid.Column="1">
             <controls:DataGrid x:Name="SummaryGrid"
                                ItemsSource="{x:Bind unitList}"
+                               
                       AutoGenerateColumns="False">
                 <controls:DataGrid.Columns>
+                    <controls:DataGridTextColumn Header="National Code"
+                                                 Binding="{Binding NationalCode}"                                                 
+                                                 Width="200"
+                                                 />
                     <controls:DataGridTextColumn Header="Course Name"
                                                  Binding="{Binding SubjectDesc}"                                                 
-                                                 Width="200"
+                                                 Width="*"
                                                  />
                     <controls:DataGridTextColumn Header="National Code"
                                                  Binding="{Binding SubjectCode}"
