@@ -29,14 +29,23 @@ namespace SRV.Views
     /// </summary>
     public sealed partial class SummaryPage : Page
     {
-
+        List<Unit> unitList;
         public SummaryPage()
         {
             this.InitializeComponent();
 
             Unit newUnit = new Unit();
-            List<Unit> unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
-            SummaryGrid.ItemsSource = unitList;
+           // Unit unit1 = new Unit();
+           // Unit unit2 = new Unit();
+           // List<Unit> unitList2 = new List<Unit>();
+            //unitList2.Add(unit1);
+
+            //unitList2.Add(unit2);
+
+            unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
+            //SummaryGrid.ItemsSource = unitList2;
+            //SummaryGrid.Columns
+            
         }
 
         private void TranAppButton_Click(object sender, RoutedEventArgs e)
@@ -69,8 +78,6 @@ namespace SRV.Views
                 unitThing += units[i].ToString();
                 i++;
             }
-
-
 
             MessageDialog message = new MessageDialog(unitThing);
             await message.ShowAsync();

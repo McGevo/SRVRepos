@@ -143,6 +143,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\tafeBuddyDB_190531_V2.sql" />
     <Content Include="Images\headerLogo.png" />
     <Content Include="Images\headerBG.png" />
     <Content Include="Assets\background.png" />
@@ -191,6 +192,8 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\tafebuddy_ERD_190531.mwb" />
+    <None Include="Data\tafebuddy_ERD_190531.mwb.bak" />
     <None Include="SRV_TemporaryKey.pfx" />
     <None Include="tafebuddy_ERD_190531.mwb" />
   </ItemGroup>

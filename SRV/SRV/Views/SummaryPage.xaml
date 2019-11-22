@@ -3,15 +3,14 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SRV.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:data="using:SRV.Models.Unit"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <DataTemplate x:Key="tbDataCollection" />
+        
     </Page.Resources>
     
     <Grid>
@@ -47,7 +46,8 @@
         <StackPanel Grid.Row="4" />
 
         <StackPanel Grid.Row="3" Grid.Column="1">
-            <controls:DataGrid x:Name="SummaryGrid"  
+            <controls:DataGrid x:Name="SummaryGrid"
+                               ItemsSource="{x:Bind unitList}"
                       AutoGenerateColumns="False">
                 <controls:DataGrid.Columns>
                     <controls:DataGridTextColumn Header="Course Name"
