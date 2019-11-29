@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SRV.Models;
 using SRV.Views;
 using System;
 using System.Collections.Generic;
@@ -29,14 +30,12 @@ namespace SRV
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
 
-        
-      
-
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+        
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

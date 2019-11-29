@@ -36,12 +36,12 @@
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" FontSize="24" Width="228" />
                 <TextBox x:Name="phoneTBox" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="250" FontSize="24" HorizontalAlignment="Stretch" />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Student ID" VerticalAlignment="Top" FontSize="24" Width="136" />
-                <TextBox TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="250" FontSize="24" Background="White" HorizontalAlignment="Stretch" />
+                <TextBox  Name="idTBox" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="250" FontSize="24" Background="White" HorizontalAlignment="Stretch" />
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Qualification" VerticalAlignment="Top" FontSize="24" Width="147" />
-                <ComboBox VerticalAlignment="Top" MinWidth="250" FontSize="24" Background="White" HorizontalAlignment="Stretch" />
+                <ComboBox Name="qualBox" VerticalAlignment="Top" MinWidth="250" FontSize="24" Background="White" HorizontalAlignment="Stretch" />
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Content="Submit" Margin="10" FontSize="24"/>
-                    <Button Content="Reset"  Margin="10" FontSize="24"/>
+                    <Button Name="submitButton" Content="Submit" Margin="10" FontSize="24" Click="SubmitButton_Click"/>
+                    <Button Name="resetButton" Content="Reset"  Margin="10" FontSize="24" Click="ResetButton_Click"/>
                 </StackPanel>
 
             </StackPanel>

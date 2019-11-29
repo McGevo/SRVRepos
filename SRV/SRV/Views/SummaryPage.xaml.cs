@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Popups;
 using Microsoft.Toolkit.Uwp.UI.Controls;
+using System.Diagnostics;
 
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
@@ -29,15 +30,29 @@ namespace SRV.Views
     /// </summary>
     public sealed partial class SummaryPage : Page
     {
+        Unit newUnit = new Unit();
         List<Unit> unitList;
+        Student student = LoginPage.student;
+        List<string> qualList;
+
+        string connString = "server=studentserver.com.au;user id=admin_srv-sdm;password=Passw0rd!@#;database=admin_it_studies_dev";
+        public MySqlConnection mySqlConn;
+
+        string query;
+        MySqlCommand command;
+        MySqlDataReader dReader;
+
         public SummaryPage()
         {
             this.InitializeComponent();
 
-            Unit newUnit = new Unit();
+            
             double progressTracker = 0;
 
-            unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
+
+            //Valid Emails --> sally.smith@student.tafesa.edu.au or m_perez@hotmail.com
+
+            unitList = newUnit.SelectUnits(student.Email);
 
             for (int i = 0; i < unitList.Count; i++)
             {
@@ -54,7 +69,11 @@ namespace SRV.Views
                 passBar.Value = result;
             else
                 passBar.Value = 0;
-            
+
+            Qualification qual = new Qualification();
+            qualList = qual.SelectQualifications(student.StudentID);
+            qualComboBox.ItemsSource = qualList;
+
         }
 
         private void TranAppButton_Click(object sender, RoutedEventArgs e)
@@ -68,28 +87,14 @@ namespace SRV.Views
         }
 
 
-        public void BindGrid()
-        {
+
+
             
-        }
+            
 
-        private async void RandomButton_Click(object sender, RoutedEventArgs e)
+    private void QualComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Unit unit = new Unit();
-
-            List<Unit> units = unit.SelectUnits("m_perez@hotmail.com");
-
-            string unitThing = units[0].ToString();
-
-            int i = 0;
-            while (i < 12)
-            {
-                unitThing += units[i].ToString();
-                i++;
-            }
-
-            MessageDialog message = new MessageDialog(unitThing);
-            await message.ShowAsync();
+            //unitList = newUnit.QualChanged(student.StudentID, qualComboBox.SelectedItem.ToString());
         }
     }
 }

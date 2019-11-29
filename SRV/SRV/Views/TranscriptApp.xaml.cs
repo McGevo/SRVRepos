@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SRV.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,10 +23,24 @@ namespace SRV.Views
     /// </summary>
     public sealed partial class TranscriptApp : Page
     {
+        Student student = LoginPage.student;
+        
         public TranscriptApp()
         {
+
             this.InitializeComponent();
+
+            fNameTBox.Text = student.FirstName;
+            sNameTBox.Text = student.Surname;
+            emailTBox.Text = student.Email;
+
+            Qualification qual = new Qualification();
+            List<string> qualList = qual.SelectQualifications(student.StudentID);
+            qualBox.ItemsSource = qualList;
+            idTBox.Text = student.StudentID;
         }
+
+        
 
         private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -35,6 +50,20 @@ namespace SRV.Views
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(LoginPage));
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            emailTBox.Text = "";
+            phoneTBox.Text = "";
+            idTBox.Text = "";
+        }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            emailTBox.Text = "";
+            phoneTBox.Text = "";
+            idTBox.Text = "";
         }
     }
 }

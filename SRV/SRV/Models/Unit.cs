@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,6 +91,47 @@ namespace SRV.Models
 
             return units;
         }
+
+        //public List<Unit> QualChanged(string studentID, string qualName)
+        //{
+        //    string[] subjectCode = new string[100];
+        //    string[] subjectDesc = new string[100];
+        //    string[] grade = new string[100];
+        //    string[] nationalCode = new string[100];
+        //    string[] crn = new string[100];
+        //    List<Unit> units = new List<Unit>();
+        //    int tracker = 0;
+        //    Qualification qual = new Qualification(qualName);
+
+        //    mySqlConn = new MySqlConnection(connString);
+
+        //    query = "SELECT subject.SubjectCode, SubjectDescription, Grade, NationalCompCode FROM student_grade INNER JOIN student ON student_grade.StudentID = student.StudentID INNER JOIN student_studyplan ON student.StudentID = student_studyplan.StudentID INNER JOIN qualification ON student_studyplan.QualCode = qualification.QualCode INNER JOIN subject_qualification ON qualification.QualCode = subject_qualification.QualCode INNER JOIN subject ON subject_qualification.SubjectCode = subject.SubjectCode INNER JOIN crn_detail ON subject.SubjectCode = crn_detail.SubjectCode INNER JOIN competency ON crn_detail.TafeCompCode = competency.TafeCompCode WHERE student_grade.StudentID = " + studentID + " AND QualName = " + qual.QualCode;
+        //    command = new MySqlCommand(query, mySqlConn);
+        //    mySqlConn.Open();
+        //    dReader = command.ExecuteReader();
+
+        //    int i = 0;
+        //    while (dReader.Read())
+        //    {
+        //        subjectCode[i] = dReader.GetValue(0).ToString();
+        //        subjectDesc[i] = dReader.GetValue(1).ToString();
+        //        grade[i] = dReader.GetValue(2).ToString();
+        //        nationalCode[i] = dReader.GetValue(3).ToString();
+
+        //        i++;
+        //        tracker++;
+        //    }
+
+        //    for (i = 0; i < tracker; i++)
+        //    {
+
+        //        units.Add(new Unit(subjectCode[i], subjectDesc[i], grade[i], nationalCode[i]));
+        //    }
+
+        //    Debug.WriteLine("I rock");
+
+        //    return units;
+        //}
 
 
 
