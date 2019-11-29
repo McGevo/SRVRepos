@@ -29,14 +29,32 @@ namespace SRV.Views
     /// </summary>
     public sealed partial class SummaryPage : Page
     {
-
+        List<Unit> unitList;
         public SummaryPage()
         {
             this.InitializeComponent();
 
             Unit newUnit = new Unit();
-            List<Unit> unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
-            SummaryGrid.ItemsSource = unitList;
+            double progressTracker = 0;
+
+            unitList = newUnit.SelectUnits("sally.smith@student.tafesa.edu.au");
+
+            for (int i = 0; i < unitList.Count; i++)
+            {
+                if (unitList[i].Grade == "PA" || unitList[i].Grade == "P" || unitList[i].Grade == "C" || unitList[i].Grade == "D" || unitList[i].Grade == "HD")
+                {
+                    progressTracker++;
+                }
+            }
+            double count = unitList.Count;
+            double result = progressTracker / count;
+            result = result * 100;
+
+            if (progressTracker != 0)
+                passBar.Value = result;
+            else
+                passBar.Value = 0;
+            
         }
 
         private void TranAppButton_Click(object sender, RoutedEventArgs e)
@@ -59,7 +77,7 @@ namespace SRV.Views
         {
             Unit unit = new Unit();
 
-            List<Unit> units = unit.SelectUnits("sally.smith@student.tafesa.edu.au");
+            List<Unit> units = unit.SelectUnits("m_perez@hotmail.com");
 
             string unitThing = units[0].ToString();
 
@@ -69,8 +87,6 @@ namespace SRV.Views
                 unitThing += units[i].ToString();
                 i++;
             }
-
-
 
             MessageDialog message = new MessageDialog(unitThing);
             await message.ShowAsync();
